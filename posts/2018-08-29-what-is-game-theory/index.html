@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Personal Blog">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="/">
+
+<meta name="twitter:image" content="/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Intrepid">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Personal Blog">
+<meta name="og:type" content="website">
+<meta name="og:url" content="/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="/tn.png">
+
+<link rel="shortcut icon" href="/sam.ico" id="favicon">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        What is game theory anyway ?
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">What is game theory anyway ?</div>
+
+        
+<div class="section" id="content" align="justify">
+    Wed Aug 29, 2018 &#183; 1700 words
+    
+    <hr />
+    
+
+<p>There was a time when I thought game theory was a theoretical approach to designing computer games. What can I say, I was young and dumb. At least now I&rsquo;m older ¯\_(ツ)_/¯.</p>
+
+<p>Anyways, I&rsquo;m no expert in game theory, so I won&rsquo;t attempt to teach you what it is. Instead I&rsquo;ll spend most of my precious blog space explaining something else - the prisoner&rsquo;s dilemma. The idea is not really to give you the basic lessons in game theory (sorry) but to give a brief overview of what it is and to convince you why it makes sense to have it as a theory in the first place. The prisoner&rsquo;s dilemma is perfect for this. At the end of the article you won&rsquo;t learn your first lesson in game theory, but hopefully, you&rsquo;ll <em>want</em> to learn your first lesson. I&rsquo;ll share a few resources for that as well.</p>
+
+<h2 id="the-dilemma">The Dilemma</h2>
+
+<p>The prisoner&rsquo;s dilemma is one of the standard problems in game theory and it is presented as follows (source: <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">Wikipedia</a>)</p>
+
+<p>Two members of a criminal gang are arrested and imprisoned. Each prisoner is in solitary confinement with no means of communicating with the other. The prosecutors lack sufficient evidence to convict the pair on the principal charge, but they have enough to convict both on a lesser charge. Simultaneously, the prosecutors offer each prisoner a bargain. Each prisoner is given the opportunity either to betray the other by testifying that the other committed the crime, or to cooperate with the other by remaining silent. The offer is:</p>
+
+<ul>
+<li>If A and B each betray the other, each of them serves <strong>two</strong> years in prison</li>
+<li>If A betrays B but B remains silent, A will be set free and B will serve <strong>three</strong> years in prison (and vice versa)</li>
+<li>If A and B both remain silent, both of them will only serve <strong>one</strong> year in prison (on the lesser charge).</li>
+</ul>
+
+<p>Now, here is the principal question</p>
+
+<blockquote>
+<p>What is the best decision that either of these prisoners can take? To betray or not to betray?</p>
+</blockquote>
+
+<p>Take a break and think 🧠 (not Google) about this.</p>
+
+<h2 id="the-betrayal">The Betrayal 🔪</h2>
+
+<p>It might seem like a hard choice (it is, but we&rsquo;ll come to that later) but we can simplify it for now. Let&rsquo;s draw a table as shown below. The rows represent the potential decisions that can be made by your partner and the columns represent your choices. The values in the table are the number of years <em>you</em> get sentenced to.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">You betray</th>
+<th align="center">You stay silent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>He betrays</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td>He stays silent</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>Draw this table, and then take a pen and circle the best outcome that you can get for each of the other guy&rsquo;s choices ie for the case where he betrays you and the case where he doesn&rsquo;t. What do you get ?</p>
+
+<p>If he decides to betray you, your best option is to betray him, because you get 2 years compared to 3 years. And if he decides to stay silent ? Your best option is still to betray him because you get to go free instead of spending an year in prison. In either case, your best outcome is produced by the decision to betray him, which is cool, right? I mean, you can take a decision irrespective of what the other guy does. But here&rsquo;s the catch. A reasonable assumption in game theory suggests that the people involved will act in a rational and self-interested manner. So the prisoners aren&rsquo;t going to flip a coin to decide and neither are they willing to go to prison for the other guy(self-interested). This means that the other guy is going to be as rational as you are, and that he is going through the exact logical decision making steps you went through to arrive at his final decision. In the end, he will reach the same conclusion as you, betray 🙇🏻‍♂</p>
+
+<p>You&rsquo;re starting to see the dilemma aren&rsquo;t you ?</p>
+
+<ol>
+<li>As explained above, both prisoners, thinking rationally will arrive at the same choice; to betray their partner</li>
+<li>If both prisoners betray each other they both get a sentence of 2 years in prison</li>
+<li>But there is an outcome where both of them get away with something better, 1 year in prison.</li>
+<li>What is the decision to be taken so that this outcome will be produced ? Do not betray 🤯</li>
+</ol>
+
+<p>Ladies and gents, I give you the prisoner&rsquo;s dilemma. Both prisoners know the best rational decision that they can take. But if they assume that the other prisoner also takes decisions as rational as themselves, their rationally best choice is no longer the best choice. This is the crux of game theory. The outcomes we desire are not just based on the choices available to us but also on our prediction of other peoples choices. This is were a simple decision problem transitions into the waters of game theory.</p>
+
+<p>The two scenarios we discussed here are actually two core concepts in game theory:</p>
+
+<p><strong>Nash equilibrium</strong>: An outcome where each party is doing the best they can, provided the other party’s choices. So the Nash equillibrium in our problem would be both prisoners betraying each other.</p>
+
+<p>and</p>
+
+<p><strong>Pareto optimality</strong>: An outcome in which both players incur minimum possible harm. More formally, deviating from a Pareto optimal solution cannot be possible without harming at least one of the parties more than the others. This is acheived when both prisoners stay silent.</p>
+
+<p>The reason why Prisoners’ dilemma is such a dilemma is that both Pareto optimal and Nash equilibrium are different. If they had overlapped, the dilemma wouldn&rsquo;t have been such a dilemma and the choices would&rsquo;ve been obvious</p>
+
+<h2 id="it-s-not-just-theory">It&rsquo;s not just theory</h2>
+
+<p>Game theory and the prisoner&rsquo;s dilemma we just discussed are not just theoretical concepts, it allows us to some extent model our decision making process. Earlier today I was complaining to one of my friends, how corrupt some of the goverment offices where in India. And like a proper hypocrite, I blamed the <em>society</em> (of which I&rsquo;m part of🤦🏽‍) for nurturing this culture. I mean if everyone stops paying bribes this country would be a much better place, wouldn&rsquo;t it ?. But we all know that it hasn&rsquo;t happened and also know that it will not happen easily in the near future. Now, there are a lot of complex reasons as to why it is difficult for an entire society to suddenly stop paying bribes, but if you look at it from a game theory perspective it makes a lot of sense. I must tell you that I&rsquo;m not suggesting to use game theory as a solution for fighting corruption but rather providing an example to illustrate how game theory abstracts certain situations like these.</p>
+
+<p>As I mentioned earlier, the society as a whole is responsible for encouraging corruption in our country. But the primary fallacy in blaming the &ldquo;society&rdquo; for <em>any</em> problem is that &ldquo;society&rdquo; is not a single entity, it is composed of its individual players, you, I and everyone else. And each of these players act to achieve their self-interests. Let&rsquo;s take an example. Imagine you&rsquo;re building a new house and to start the construction you have to get the plans approved by the local government authorities. So you collect the required documents and go to the village office. But when you submit the documents to the officer, he simply shoves the file into the heap of similar documents on his desk and asks you to come <a href="https://www.quora.com/What-do-you-mean-by-red-tapism-in-India">3 weeks later</a>. As you leave the office though, one his assistants comes running to you whispers to you that there is a way to get the documents processed faster, that is to give him a small bribe.</p>
+
+<p>Now, you have two options, to give the bribe or not. In the ideal case, a responsible citizen should do the right thing and refuse to pay the official. You weigh your personal need vs doing the right thing. A lot of us, believe it or not, would pick the latter. But unfortunately, it is not as simple as that. The question is, what is the &ldquo;outcome&rdquo; that you are trying to control with your choices ? And are your choices sufficient to control that outcome ? The answer is when you refuse to pay the bribe, even though you are trying to control corruption (this is your prison sentence) it is not just dependent on your choices. It depends on other people (the other prisoner) that have submitted and are yet to submit their documents for approval. Even if one of them decides to pay a bribe you lose control of your desired outcome. To make it worse, if someone after you decides to pay, you might have to wait longer than you had to !</p>
+
+<p>The above scenario is not exactly the prisoner&rsquo;s dilemma but it should give you an idea of how game theory could be significant in real life as well. The main take away from scenarios like this is the dependence of the outcome not just on your choice but on others as well. This is what makes game theory interesting and useful in many situations. In fact, game theory has one of it&rsquo;s biggest applications in nuclear warfare (find out how). And I, personally, would like to see it&rsquo;s applications in AI. I think true AI, that interacts with humans and other AI agents will have to have some notion of game theory within it. But we won&rsquo;t go there now. Any discussion of AI will easily go out of the scope of this article. I hope this appetizer was good enough to picque your interest in game theory. As I mentioned earlier in the introduction, I haven&rsquo;t even scratched the surface here. I have links to a few resources in case you want to dig deeper (I hope you do).</p>
+
+<p>Thank for reading, do leave some feedback on my email or DM me on twitter (be blunt, I can take it !) and stay curious !</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+<li><a href="https://arxiv.org/ftp/arxiv/papers/1512/1512.06808.pdf">Game Theory - Giacomo Bonanno</a></li>
+<li><a href="https://zhangjun.weebly.com/uploads/2/8/1/8/2818435/martin.pdf">A Course in Game Theory - Martin J. Osborne, Ariel Rubinstein</a></li>
+<li><a href="https://www.coursera.org/learn/game-theory-1">Coursera MOOC from Stanford Univeristy</a></li>
+<li><a href="https://www.google.com/search?q=learn+game+theory">Well, why not ? 😬</a></li>
+</ul>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+  
+
+   <a href="/posts">back</a>
+   &#183;  
+  <a href="/"> home</a> &#183;
+  
+  
+  <a href="/posts"> blog</a> 
+
+  
+   &#183;
+  <a href="/projects"> projects</a>  &#183;
+  <a href="/research"> research</a>  &#183;
+  <a href="/about"> who am I ?</a>  
+</p>
+
+</div>
+
+
+        <div class="section footer"><small>Made with 💜 using Hugo</small>
+</div>
+    </div>
+</body>
+
+</html>

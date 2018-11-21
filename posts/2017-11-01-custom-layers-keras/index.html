@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Personal Blog">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="/">
+
+<meta name="twitter:image" content="/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Intrepid">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Personal Blog">
+<meta name="og:type" content="website">
+<meta name="og:url" content="/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="/tn.png">
+
+<link rel="shortcut icon" href="/sam.ico" id="favicon">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Building custom layers in Keras
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">Building custom layers in Keras</div>
+
+        
+<div class="section" id="content" align="justify">
+    Wed Nov 01, 2017 &#183; 1385 words
+    
+    <hr />
+    
+
+<p><em>Originally published at <a href="https://www.saama.com/blog/deep-learning-diaries-building-custom-layers-in-keras/">Saama website</a></em></p>
+
+<h2 id="about-keras">About Keras</h2>
+
+<p>Keras is currently one of the most commonly used deep learning libraries today. And part of the reason why it&rsquo;s so popular is its API. Keras was built as a high-level API for other deep learning libraries ie Keras as such does not perform low-level tensor operations, instead provides an interface to its backend which are built for such operations. This allows Keras to abstract a lot of the underlying details and allows the programmer to concentrate on the architecture of the model. Currently Keras supports Tensorflow, Theano and CNTK as its backends.</p>
+
+<p>Let&rsquo;s see what I mean. Tensorflow is one of the backends used by Keras. Here&rsquo;s the code for MNIST classification in <a href="https://www.github.com/tensorflow/tensorflow/blob/r1.3/tensorflow/examples/tutorials/mnist/mnist_deep.py">TensorFlow</a> and <a href="https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py">Keras</a>. Both models are nearly identical and applies to the same problem. But if you compare the codes you get an idea of the abstraction Keras provides you with. The entire model is defined within 10 lines of code !</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> Sequential()
+model<span style="color:#f92672">.</span>add(Conv2D(<span style="color:#ae81ff">32</span>, kernel_size<span style="color:#f92672">=</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>), activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>, input_shape<span style="color:#f92672">=</span>input_shape))
+model<span style="color:#f92672">.</span>add(Conv2D(<span style="color:#ae81ff">64</span>, (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>), activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
+model<span style="color:#f92672">.</span>add(MaxPooling2D(pool_size<span style="color:#f92672">=</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)))
+model<span style="color:#f92672">.</span>add(Dropout(<span style="color:#ae81ff">0.25</span>))
+model<span style="color:#f92672">.</span>add(Flatten())
+model<span style="color:#f92672">.</span>add(Dense(<span style="color:#ae81ff">128</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>))
+model<span style="color:#f92672">.</span>add(Dropout(<span style="color:#ae81ff">0.5</span>))
+model<span style="color:#f92672">.</span>add(Dense(num_classes, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>))</code></pre></div>
+<p>You can visit the <a href="(https://keras.io/)">official documentation</a> for understanding the basic usage of Keras.</p>
+
+<h3 id="sequential-api-vs-functional-api">Sequential API vs Functional API</h3>
+
+<p>Keras has two different APIs, <a href="https://keras.io/getting-started/sequential-model-guide/">Sequential</a> and <a href="https://keras.io/getting-started/functional-api-guide/">Functional</a>.</p>
+
+<p>The sequential model is helpful when your model is simply one layer after the other. You can use <code>model.add()</code> to stack layers and <code>model.compile</code> to compile the model with required loss function and optimizers. The example at the beginning uses the sequential model. As you can see, the sequential model is simple in its usage.</p>
+
+<p>The Keras functional API brings out the real power of Keras. If you want to build complex models with multiple inputs or models with shared layers, functional API is the way to go. Let&rsquo;s see the example from the docs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> keras.layers <span style="color:#f92672">import</span> Input, Dense
+<span style="color:#f92672">from</span> keras.models <span style="color:#f92672">import</span> Model
+
+<span style="color:#75715e"># This returns a tensor</span>
+inputs <span style="color:#f92672">=</span> Input(shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">784</span>,))
+
+<span style="color:#75715e"># a layer instance is callable on a tensor, and returns a tensor</span>
+x <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">64</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>)(inputs)
+x <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">64</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>)(x)
+predictions <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>)(x)
+
+<span style="color:#75715e"># This creates a model that includes</span>
+<span style="color:#75715e"># the Input layer and three Dense layers</span>
+model <span style="color:#f92672">=</span> Model(inputs<span style="color:#f92672">=</span>inputs, outputs<span style="color:#f92672">=</span>predictions)
+model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rmsprop&#39;</span>,
+              loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;categorical_crossentropy&#39;</span>,
+              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])
+model<span style="color:#f92672">.</span>fit(data, labels)  <span style="color:#75715e"># starts training</span></code></pre></div>
+<p>Here, the layers take a more functional form compared to the sequential model. The inputs to each layer are explictly specified and you have access to the output of each layer. This allows you to share the tensors with multiple layers. The functional API also gives you control over the model inputs and outputs as seen above.</p>
+
+<h3 id="keras-computational-graph">Keras computational graph</h3>
+
+<p>Before we write our custom layers let&rsquo;s take a closer look at the internals of Keras computational graph. Keras has its own graph which is different from that of it&rsquo;s underlying backend. The Keras topology has 3 key classes that is worth understanding</p>
+
+<ul>
+<li><code>Layer</code> encapsules the weights and the associated computations of the layer. The <code>call</code> method of a layer class contains the layer&rsquo;s logic. The layer has <code>inbound_nodes</code> and <code>outbound_nodes</code> attributes. Each time a layer is connected to some new input, a node is added to <code>inbound_nodes</code>. Each time the output of a layer is used by another layer, a node is added to <code>outbound_nodes</code>. The layer also carries a list of trainable and non-trainable weights of the layer.</li>
+<li><code>Node</code> represents the connection between two layers. <code>node.outbound_layer</code> points to the layer that converts the input tensor into output tensor. <code>node.inbound_layers</code> is a list of layers from where the input tensors originate. The node object carries other information like input and output shapes, masks etc along with the actual input tensors and output tensors.</li>
+<li><code>Container</code> is a directed acyclic graph of layers connected using nodes. It represents the topology of the model. This graph ensures the correct propagation of gradients to the inputs. The actual model couples the optimzer and training routines along with this.</li>
+</ul>
+
+<h2 id="custom-layers">Custom layers</h2>
+
+<p>Despite the wide variety of layers provided by Keras, it is sometimes useful to create your own layers like when you need are trying to implement a new layer architecture or a layer that doesn&rsquo;t exist in Keras. Custom layers allow you to set up your own transformations and weights for a layer. Remember that if you do not need new weights and require stateless transformations you can use the <a href="https://keras.io/layers/core/#lambda">Lambda</a> layer.</p>
+
+<p>Now let’s see how we can define our custom layers. As of Keras 2.0 there are three functions that needs to be defined for a layer</p>
+
+<ul>
+<li><code>build(input_shape)</code></li>
+<li><code>call(input)</code></li>
+<li><code>compute_output_shape(input_shape)</code></li>
+</ul>
+
+<p>The <code>build</code> method is called when the model containing the layer is built. This is where you set up the weights of the layer. The <code>input_shape</code> is accepted as an argument to the function.</p>
+
+<p>The <code>call</code> method defines the computations performed on the input. The function accepts the input tensor as its argument and returns the output tensor after applying the required operations.</p>
+
+<p>Finally, we need to define the <code>compute_output_shape</code> function that is required for Keras to infer the shape of the output. This allows Keras to do shape inference without actually executing the computation. The <code>input_shape</code> is passed as the argument.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Now lets build our custom layer. For the sake of simplicity we&rsquo;ll be building a vanilla fully-connected layer (called <code>Dense</code> in Keras). First let&rsquo;s make the required imports</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> keras <span style="color:#f92672">import</span> backend <span style="color:#66d9ef">as</span> K
+<span style="color:#f92672">from</span> keras.engine.topology <span style="color:#f92672">import</span> Layer</code></pre></div>
+<p>Now let&rsquo;s create our layer named <code>MyDense</code>. Our new layer must inherit from the base <code>Layer</code> class. Set up <code>__init__</code> function to accept the number of units (accepted as output_dim) in the fully connected layer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyDense</span>(Layer):
+
+    <span style="color:#66d9ef">def</span> __init__(self, output_dim, <span style="color:#f92672">**</span>kwargs):
+        self<span style="color:#f92672">.</span>units <span style="color:#f92672">=</span> output_dim
+        super(MyLayer, self)<span style="color:#f92672">.</span>__init__(<span style="color:#f92672">**</span>kwargs)</code></pre></div>
+<p>The <code>build</code> function is where we define the weights of the layer. The weights can be instantiated using the <code>add_weight</code> method of the layer class. The <code>name</code> and <code>shape</code> arguments determine the name used for the backend variable and the shape of the weight variable respectively. If your input is of the shape <code>(batch_size, input_dim)</code> your weights need to be of the shape <code>(input_dim, output_dim)</code>. Here output dimension denotes the number of units in the layer.</p>
+
+<p>Optionally you may also specify an <a href="https://keras.io/initializers/">initializer</a>, <a href="https://keras.io/regularizers/">regularizer</a> and a <a href="https://keras.io/constraints/">constraint</a>. The <code>trainable</code> argument can be set to False to prevent the weight from contributing to the gradient. Make sure you also call the <code>build</code> method of the base layer class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build</span>(self, input_shape):
+        self<span style="color:#f92672">.</span>kernel <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>add_weight(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kernel&#39;</span>,
+                                      shape<span style="color:#f92672">=</span>(input_shape[<span style="color:#ae81ff">1</span>], self<span style="color:#f92672">.</span>output_dim),
+                                      initializer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;uniform&#39;</span>,
+                                      trainable<span style="color:#f92672">=</span>True)
+        super(MyLayer, self)<span style="color:#f92672">.</span>build(input_shape)</code></pre></div>
+<p>The <code>call</code> function houses the logic of the layer. For our fully connected layer it means that we have to calculate the dot product between the weights and the input. The input is passed as a parameter and the result of the dot product is returned.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">call</span>(self, x):
+        y <span style="color:#f92672">=</span> K<span style="color:#f92672">.</span>dot(x, self<span style="color:#f92672">.</span>kernel)
+        <span style="color:#66d9ef">return</span> y</code></pre></div>
+<p>The <code>compute_output_shape</code> is a helper function to specify the change in shape of the input when it passes through the layer. Here our output shape will be <code>(batch_size, output_dim)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">compute_output_shape</span>(self, input_shape):
+        <span style="color:#66d9ef">return</span> (input_shape[<span style="color:#ae81ff">0</span>], self<span style="color:#f92672">.</span>output_dim)</code></pre></div>
+<p>That&rsquo;s it, you&rsquo;re good to go. You can use <code>MyDense</code> layer just like any other layer in Keras.</p>
+
+<h2 id="keras-vs-other-dl-frameworks">Keras vs Other DL Frameworks</h2>
+
+<p>I&rsquo;ve seen a lot of discussions comparing deep learning frameworks including Keras and personally I think Keras should not be on the list. As I mentioned earlier, Keras is technically not a deep learning framework, it&rsquo;s an API. It runs on top of other DL frameworks. The power of Keras is in it&rsquo;s abstraction while still giving you sufficient control over your architecture.</p>
+
+<p>But in case you decide that you need to play with lower level tensor operations you can always go for other frameworks. Tensorflow seems to be the most popular these days. Backed by Google, it even has C++ and Go APIs. Theano was one of the first DL frameworks, but have been discontinued recently. PyTorch is an interesting competitor with it&rsquo;s dynamic graphs. Unlike Tensorflow or Theano, which has static graphs, the computational graphs in <a href="http://pytorch.org/about/">PyTorch</a> are built dynamically for each input. It is becoming increasingly popular amongst researchers due to its flexibility.</p>
+
+<p>If you ask me Keras is sufficient for most purposes. Even when you experiment with new architectures the functional API combined with the access to backend functions can get the job done often. But that&rsquo;s just me, a lot of people directly go for Tensorflow and other libraries.</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+  
+
+   <a href="/posts">back</a>
+   &#183;  
+  <a href="/"> home</a> &#183;
+  
+  
+  <a href="/posts"> blog</a> 
+
+  
+   &#183;
+  <a href="/projects"> projects</a>  &#183;
+  <a href="/research"> research</a>  &#183;
+  <a href="/about"> who am I ?</a>  
+</p>
+
+</div>
+
+
+        <div class="section footer"><small>Made with 💜 using Hugo</small>
+</div>
+    </div>
+</body>
+
+</html>
