@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Intrepid</title>
-    <link>abhaikollara.github.io/blog2/tags/</link>
+    <link>abhaikollara.xyz/blog2/tags/</link>
     <description>Recent content in Tags on Intrepid</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="abhaikollara.github.io/blog2/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="abhaikollara.xyz/blog2/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Education</title>
-      <link>abhaikollara.github.io/blog2/tags/education/</link>
+      <link>abhaikollara.xyz/blog2/tags/education/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/blog2/tags/education/</guid>
+      <guid>abhaikollara.xyz/blog2/tags/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fiction</title>
-      <link>abhaikollara.github.io/blog2/tags/fiction/</link>
+      <link>abhaikollara.xyz/blog2/tags/fiction/</link>
       <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/blog2/tags/fiction/</guid>
+      <guid>abhaikollara.xyz/blog2/tags/fiction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Opinion</title>
-      <link>abhaikollara.github.io/blog2/tags/opinion/</link>
+      <link>abhaikollara.xyz/blog2/tags/opinion/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/blog2/tags/opinion/</guid>
+      <guid>abhaikollara.xyz/blog2/tags/opinion/</guid>
       <description></description>
     </item>
     
