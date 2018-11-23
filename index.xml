@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intrepid</title>
-    <link>abhaikollara.github.io/</link>
+    <link>https://abhaikollara.github.io/</link>
     <description>Recent content on Intrepid</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Nov 2018 16:36:05 +0530</lastBuildDate>
     
-	<atom:link href="abhaikollara.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://abhaikollara.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>abhaikollara.github.io/projects/</link>
+      <link>https://abhaikollara.github.io/projects/</link>
       <pubDate>Sun, 18 Nov 2018 16:36:05 +0530</pubDate>
       
-      <guid>abhaikollara.github.io/projects/</guid>
+      <guid>https://abhaikollara.github.io/projects/</guid>
       <description> Machine Learning  Flare A Keras inspired training utility for PyTorch [WIP] Sidekick Helper functions for word embeddings Sentence classification using CNNs  Web  HackerNews Prettier: An implementation of HackerNews using Bootstrap and React  </description>
     </item>
     
     <item>
       <title>About</title>
-      <link>abhaikollara.github.io/about/</link>
+      <link>https://abhaikollara.github.io/about/</link>
       <pubDate>Sun, 18 Nov 2018 16:30:01 +0530</pubDate>
       
-      <guid>abhaikollara.github.io/about/</guid>
+      <guid>https://abhaikollara.github.io/about/</guid>
       <description> Who am I ? My name is Abhai Kollara Dilip. I’m a former student of Cochin University of Science and Technology.
 What do I do I’m an AI researcher at Saama technologies. I am also an occasional open source contributor.
 Social Links  Mail : me@abhaikollara.xyz Twitter Github LinkedIn  </description>
@@ -33,28 +33,28 @@ Social Links  Mail : me@abhaikollara.xyz Twitter Github LinkedIn  </description>
     
     <item>
       <title>Research</title>
-      <link>abhaikollara.github.io/research/</link>
+      <link>https://abhaikollara.github.io/research/</link>
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/research/</guid>
+      <guid>https://abhaikollara.github.io/research/</guid>
       <description> Convolutional Neural Networks In Classifying Cancer Through DNA Methylation PHI Scrubber: A Deep Learning Approach  </description>
     </item>
     
     <item>
       <title>The &#39;Why&#39; of Engineering</title>
-      <link>abhaikollara.github.io/posts/2018-11-16-the-why-of-engineering/</link>
+      <link>https://abhaikollara.github.io/posts/2018-11-16-the-why-of-engineering/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-11-16-the-why-of-engineering/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-11-16-the-why-of-engineering/</guid>
       <description>Science and engineering are two closely related fields but they represent fundamentally different objectives. Science is about understanding and explaining phenomenon. It is about deriving facts from observations. Physicsists often talk about the grand unified theory, one theory to explain everything (sort of). Biology tries to understand and explain life. Every field of science has some aspect of the world that it is trying to explain. But engineering is NOT science.</description>
     </item>
     
     <item>
       <title>The Language Barrier</title>
-      <link>abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</link>
+      <link>https://abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</link>
       <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</guid>
       <description>A general tip to anyone who is learning to code. If your English is not that strong, use a dictionary. Look up word meanings. They may have multiple definitions, but they generally point to a common idea. Understanding them goes a long way in developing an intuitive understanding of the corresponding concept.
 Consider the following words and their dictionary definitions.
  iterate: to do something again and again exception : a case to which a rule does not apply class : a group sharing the same economic or social status method : a systematic plan followed in presenting material for instruction static : showing little change public : exposed to general view  If you are a programmer with sound understanding of the English language, you will immediately recognise how close these definitions are to their meaning in the context of programming.</description>
@@ -62,19 +62,19 @@ Consider the following words and their dictionary definitions.
     
     <item>
       <title>College: What went wrong, what went right</title>
-      <link>abhaikollara.github.io/posts/2018-09-21-college-what-went-wrong/</link>
+      <link>https://abhaikollara.github.io/posts/2018-09-21-college-what-went-wrong/</link>
       <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-09-21-college-what-went-wrong/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-09-21-college-what-went-wrong/</guid>
       <description>In 2014 when I started college I dreamt of being a great student. I picked computer science as my major because I loved the field. I was happy, confident and excited. After all, I had straight A+s in class Xth and 90% in class 12, what could go wrong ? After 4 years of college, I have 7 backpapers with a history of at least 15 failed papers (along with a couple of research papers though) to my name.</description>
     </item>
     
     <item>
       <title>Reality</title>
-      <link>abhaikollara.github.io/posts/2018-09-05-reality/</link>
+      <link>https://abhaikollara.github.io/posts/2018-09-05-reality/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-09-05-reality/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-09-05-reality/</guid>
       <description>This once came across my Facebook feed  
 The thing about working with AI is that I very often end up wondering how the human brain works. And even though it has been a subject of discussion in pop media as well as religion there is this one thing that gets me every single time I think about it.
 Everything that you call reality, what you see, hear, smell, taste and touch, are a bunch of electric impulses inside your brain.</description>
@@ -82,40 +82,40 @@ Everything that you call reality, what you see, hear, smell, taste and touch, ar
     
     <item>
       <title>What is game theory anyway ?</title>
-      <link>abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</link>
+      <link>https://abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</link>
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</guid>
       <description>There was a time when I thought game theory was a theoretical approach to designing computer games. What can I say, I was young and dumb. At least now I&amp;rsquo;m older ¯\_(ツ)_/¯.
 Anyways, I&amp;rsquo;m no expert in game theory, so I won&amp;rsquo;t attempt to teach you what it is. Instead I&amp;rsquo;ll spend most of my precious blog space explaining something else - the prisoner&amp;rsquo;s dilemma. The idea is not really to give you the basic lessons in game theory (sorry) but to give a brief overview of what it is and to convince you why it makes sense to have it as a theory in the first place.</description>
     </item>
     
     <item>
       <title>Our finest hour</title>
-      <link>abhaikollara.github.io/posts/2018-08-20-who-we-are/</link>
+      <link>https://abhaikollara.github.io/posts/2018-08-20-who-we-are/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2018-08-20-who-we-are/</guid>
+      <guid>https://abhaikollara.github.io/posts/2018-08-20-who-we-are/</guid>
       <description>മാവേലി നാടു വാണീടും കാലം മാനുഷരെല്ലാരുമൊന്നുപോലെ (The reign of Maveli, when people were united as one)
 There hasn&amp;rsquo;t been an Onam in recent history when the people of this land were more united. In the last few days we did something many of us thought would never be possible again. We ignored our religion, we forgot our political affiliations, we shed ourselves of all labels other than humanity. Our crisis has taught us that we are capable of being one again.</description>
     </item>
     
     <item>
       <title>Building custom layers in Keras</title>
-      <link>abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</link>
+      <link>https://abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</guid>
+      <guid>https://abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</guid>
       <description>Originally published at Saama website
 About Keras Keras is currently one of the most commonly used deep learning libraries today. And part of the reason why it&amp;rsquo;s so popular is its API. Keras was built as a high-level API for other deep learning libraries ie Keras as such does not perform low-level tensor operations, instead provides an interface to its backend which are built for such operations. This allows Keras to abstract a lot of the underlying details and allows the programmer to concentrate on the architecture of the model.</description>
     </item>
     
     <item>
       <title>The Awakening</title>
-      <link>abhaikollara.github.io/posts/2017-01-18-the-awakening/</link>
+      <link>https://abhaikollara.github.io/posts/2017-01-18-the-awakening/</link>
       <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>abhaikollara.github.io/posts/2017-01-18-the-awakening/</guid>
+      <guid>https://abhaikollara.github.io/posts/2017-01-18-the-awakening/</guid>
       <description>The little girl was barely awake. The place was barely enough for her to curl up. The darkness inside was perfect. The silence, deadly; only to be broken by a faint rhythm somewhere in the distance.
 Not so far away, the mother had been desperately waiting for her little angel. She was utterly helpless. The wait had started months ago, but wait was all she could do. She had done everything they asked to keep her child safe.</description>
     </item>
