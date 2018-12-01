@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Intrepid</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://abhaikollara.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Education</title>
+      <link>https://abhaikollara.github.io/tags/education/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/tags/education/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fiction</title>
@@ -17,6 +26,15 @@
       <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://abhaikollara.github.io/tags/fiction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opinion</title>
+      <link>https://abhaikollara.github.io/tags/opinion/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/tags/opinion/</guid>
       <description></description>
     </item>
     
