@@ -58,6 +58,12 @@
   </url>
   
   <url>
+    <loc>https://abhaikollara.github.io/tags/ai/</loc>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://abhaikollara.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -71,6 +77,12 @@
   <url>
     <loc>https://abhaikollara.github.io/tags/fiction/</loc>
     <lastmod>2017-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://abhaikollara.github.io/tags/machine-learning/</loc>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -93,8 +105,14 @@
   </url>
   
   <url>
+    <loc>https://abhaikollara.github.io/tags/stem/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://abhaikollara.github.io/tags/</loc>
-    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

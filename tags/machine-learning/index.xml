@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Raw Thoughts</title>
+    <link>https://abhaikollara.github.io/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Raw Thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://abhaikollara.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building custom layers in Keras</title>
+      <link>https://abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/posts/2017-11-01-custom-layers-keras/</guid>
+      <description>Originally published at Saama website
+About Keras Keras is currently one of the most commonly used deep learning libraries today. And part of the reason why it&amp;rsquo;s so popular is its API. Keras was built as a high-level API for other deep learning libraries ie Keras as such does not perform low-level tensor operations, instead provides an interface to its backend which are built for such operations. This allows Keras to abstract a lot of the underlying details and allows the programmer to concentrate on the architecture of the model.</description>
+    </item>
+    
+  </channel>
+</rss>

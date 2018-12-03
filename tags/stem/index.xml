@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stem on Raw Thoughts</title>
+    <link>https://abhaikollara.github.io/tags/stem/</link>
+    <description>Recent content in Stem on Raw Thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://abhaikollara.github.io/tags/stem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Language Barrier</title>
+      <link>https://abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</link>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/posts/2018-10-21-the-language-barrier/</guid>
+      <description>A general tip to anyone who is learning to code. If your English is not that strong, use a dictionary. Look up word meanings. They may have multiple definitions, but they generally point to a common idea. Understanding them goes a long way in developing an intuitive understanding of the corresponding concept.
+Consider the following words and their dictionary definitions.
+ iterate: to do something again and again exception : a case to which a rule does not apply class : a group sharing the same economic or social status method : a systematic plan followed in presenting material for instruction static : showing little change public : exposed to general view  If you are a programmer with sound understanding of the English language, you will immediately recognise how close these definitions are to their meaning in the context of programming.</description>
+    </item>
+    
+    <item>
+      <title>What is game theory anyway ?</title>
+      <link>https://abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</link>
+      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/posts/2018-08-29-what-is-game-theory/</guid>
+      <description>There was a time when I thought game theory was a theoretical approach to designing computer games. What can I say, I was young and dumb. At least now I&amp;rsquo;m older ¯\_(ツ)_/¯.
+Anyways, I&amp;rsquo;m no expert in game theory, so I won&amp;rsquo;t attempt to teach you what it is. Instead I&amp;rsquo;ll spend most of my precious blog space explaining something else - the prisoner&amp;rsquo;s dilemma. The idea is not really to give you the basic lessons in game theory (sorry) but to give a brief overview of what it is and to convince you why it makes sense to have it as a theory in the first place.</description>
+    </item>
+    
+  </channel>
+</rss>
