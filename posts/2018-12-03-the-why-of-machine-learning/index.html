@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Personal Blog">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://abhaikollara.github.io/">
+
+<meta name="twitter:image" content="https://abhaikollara.github.io/rt.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Raw Thoughts">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Personal Blog">
+<meta name="og:type" content="website">
+<meta name="og:url" content="https://abhaikollara.github.io/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://abhaikollara.github.io/rt.png">
+
+<link rel="shortcut icon" href="https://abhaikollara.github.io/sam.ico" id="favicon">
+<link rel="stylesheet" href="https://abhaikollara.github.io/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        The &#39;Why&#39; of Machine Learning
+        
+    </title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="section" id="title">The &#39;Why&#39; of Machine Learning</div>
+
+        
+<div class="section" id="content" align="justify">
+    Sat Dec 01, 2018 &#183; 1906 words
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://abhaikollara.github.io/tags/stem">
+                STEM
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://abhaikollara.github.io/tags/machine-learning">
+                machine learning
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr />
+    
+
+<p>It feels good when people appreciate your work. Usually it&rsquo;s as simple as a text with a couple of 👍 or ❤️ or even sharing <a href="../2018-11-16-the-why-of-engineering">my previous blog post</a> on their Whatsapp status. Little things like that go a long way in motivating people. So if you&rsquo;re reading this and just remembered someone who deserves your appreciation, go ahead, send them text or shoot them an email. It means a lot.</p>
+
+<p>Anyways, here I am again, curiously, with yet another blog post titled &ldquo;The Why of&rdquo;. I think the idea of <em>Start with the Why</em> is really getting to me &lsquo;cause I&rsquo;m already petting an idea called The &lsquo;Why&rsquo; of Religion (God save me).  The reason I decided to write this despite the abundance of learning material on ML is that there is still, to a degree, a lack of clarity as to why machine learning is powerful. You see, machine learning has become a powerful hammer these days and to someone with a hammer, everything looks like a nail. To avoid this, it is key to understand the &lsquo;why&rsquo; of machine learning ie the primary challenge ML solves. This is what we will be discussing in this post.</p>
+
+<p>So let&rsquo;s get started</p>
+
+<blockquote>
+<p>&ldquo;Once more unto the breach, dear friends, once more&rdquo; <br> - William Shakespeare</p>
+</blockquote>
+
+<h2 id="the-magic">The Magic</h2>
+
+<p>Let&rsquo;s begin with the most basic definition of a computer program.</p>
+
+<p>From a user&rsquo;s perspective every computer program can be explained using 3 things</p>
+
+<ul>
+<li>Stuff you have</li>
+<li>Magic</li>
+<li>Stuff you need</li>
+</ul>
+
+<p>You take the <em>stuff you have</em> and give it to a computer program which does magic on it and returns the <em>stuff you need</em>. For example, you need to add 2 numbers, say 32 and 10. Here, <code>32</code> and <code>10</code> are the <em>stuff you have</em>. You feed it to a program which conjures up some unknown magic and returns <code>42</code>, the <em>stuff you need</em>.</p>
+
+<p>This may seem like a very simplistic explanation. But every program you know, no matter how complex they seem, can be broken into simpler sub programs that consist of these 3 parts.</p>
+
+<figure class="img-article">
+<img src="/images/two-two.png">
+<figcaption>Adding two numbers</figcaption>
+</figure>
+
+<h2 id="the-magician">The Magician</h2>
+
+<p>From the programmer&rsquo;s perspective though, things are far less magical because it is their job to make the magic happen. When a user tells him that he has some &ldquo;stuff&rdquo;, and that he needs some &ldquo;other stuff&rdquo; it is the programmer who decides how to do this. In fact, around the world, that&rsquo;s essentially what programmers do.</p>
+
+<p>Let&rsquo;s look at some actual code. Here we have the Python code to take two numbers and display their sum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stuff_he_has_1 <span style="color:#f92672">=</span> input() <span style="color:#75715e"># Recieve the first number</span>
+stuff_he_has_2 <span style="color:#f92672">=</span> input() <span style="color:#75715e"># Recieve the second number</span>
+stuff_he_needs <span style="color:#f92672">=</span> stuff_he_has_1 <span style="color:#f92672">+</span> stuff_he_has_2 <span style="color:#75715e"># Magic</span>
+<span style="color:#66d9ef">print</span>(stuff_he_needs) <span style="color:#75715e"># Show the sum (the stuff he needs)</span></code></pre></div>
+<p>Note that the crucial bit of the above code is line 3, where the actual addition happens. This is the &ldquo;magic&rdquo; that happens unknown to the user. The rest of the code is to take in data from the user and display the result.</p>
+
+<p>Technically <em>stuff he has</em>, <em>magic</em> and <em>stuff he needs</em> can be called <em>input</em>, <em>process</em> and <em>output</em> respectively. And from now on, we shall use those terms. Input is what goes in to the program, output is what goes out of it and process converts input to output. Simple enough right ? So now, we can establish the following facts.</p>
+
+<ul>
+<li>A computer program can be conceptually explained using 3 things: Input, Process, Output</li>
+<li>Processing is the series of steps that convert input to output</li>
+<li>It is the duty of the programmer to define the correct process.</li>
+</ul>
+
+<blockquote>
+<p>&ldquo;These are the facts of the case, and they are undisputed&rdquo; <br> - A Few Good Men (1992)</p>
+</blockquote>
+
+<h2 id="but-what-if">But, what if &hellip;</h2>
+
+<p>&hellip;the programmer cannot define the process ¯\_(ツ)_/¯</p>
+
+<p>There are scenarios where the steps to convert input to output are not cut-and-dried.</p>
+
+<p>Consider a situation where a user says she has the specifications of a mobile phone she wants to buy. She wants to know an estimate of the price that she will have to pay for such specifications. For example, the user says she wants a phone with 4GB RAM, dual camera, fingerprint sensor etc she asks you an estimate of how much she&rsquo;ll have to spend for it.</p>
+
+<ul>
+<li>The inputs are the features of the phone (stuff she has)</li>
+<li>The output is the estimated price (stuff she needs)</li>
+</ul>
+
+<p>This is a trivial problem if you know the exact formluae used by whoever sets the price (the phone companies). If you know exactly how much each feature adds to the price of a phone you can easily write a program for that. But you don&rsquo;t know that. If you are someone who has been following the cell phone prices you might be able to give a ballpark estimate. But even then making a computer program replicate it is quite difficult for the reason that we did not calculate it, we guessed. We gave an estimate. Thus writing an equivalent line 3 for this problem is going to be awkward at best.</p>
+
+<p>Now let&rsquo;s consider another problem. The user gives you a word and wants to know the part of speech (Noun, adjective, verb etc) of the word.</p>
+
+<ul>
+<li>The input: A single english word</li>
+<li>The output: Part of speech</li>
+</ul>
+
+<p><em>You</em> probably can do this, but can you write program that tells you the same ? When you see a word like &ldquo;apple&rdquo; and identify it as a noun, you are able to do so because &ldquo;apple&rdquo; means something to you beyond just a sequence of letters. You know it&rsquo;s a <em>thing</em>. You know it&rsquo;s most probably red. You know it&rsquo;s sweet. None of this information can be picked up from the sequence of letters A-P-P-L-E. But that information is the only reason you are able to identify apple as a noun. That information is necessary to cast the &ldquo;magic&rdquo;. The problem is, the computer does not have this information. To it, the word &ldquo;apple&rdquo; or &ldquo;monkey&rdquo; is just a sequence of characters which holds no meaning. If I have a file that contains the word &ldquo;banana&rdquo; and I search for &ldquo;fruit&rdquo; I&rsquo;m not going to find a match, because neither &ldquo;banana&rdquo; nor &ldquo;fruit&rdquo; holds any meaning to the computer like it does for a human. Given this situation, it is difficult to write a &lsquo;line 3&rsquo; (remember the python code ?) for this problem.</p>
+
+<figure class="img-article">
+<img src="/images/apple.png"/>
+<center>
+<small>
+<figcaption>How do you convert A-P-P-L-E to Noun ?</figcaption>
+</small>
+</center>
+</figure>
+
+<p>Even though at first sight both these problems seem different, they suffer from the same challege; the inability to express the output in terms of the input. In the first problem, we do not know the steps required to convert the features of the phone to an estimate of the price. In the second problem we don&rsquo;t know the steps to extract the meaning of a word from the sequence of letters that form the word. And without those steps (line 3) it is impossible to construct a computer program for the task.</p>
+
+<p>That, right there, is the &ldquo;why&rdquo; of machine learning because machine learning allows you to programatically generate your &lsquo;line 3&rsquo;.</p>
+
+<h2 id="the-how">The &lsquo;How&rsquo;</h2>
+
+<p>Now that we have established where ML does it&rsquo;s best job, we can examine it a bit closely. As we said earlier, the problem is coming up with the <em>process</em> part, the line 3. The solution here is to let the machine come up with the process on it&rsquo;s own ie build a process that generates processes 🤯. Process-ception, I know, but bear with me and take a glance at the diagram below.</p>
+
+<figure class="img-article">
+<img src="/images/total2.png"/>
+<figcaption>How ML programs work</figcaption>
+</figure>
+
+<p>Let us consider a very simple example. I know we&rsquo;ve already had quite a few of those, but I promise this help with the intuition.</p>
+
+<p>See the input-output pairs below</p>
+
+<ul>
+<li>(10, 15) -&gt; 25</li>
+<li>(5, 5) -&gt; 10</li>
+<li>(100, 100) -&gt; 200</li>
+</ul>
+
+<p>Now guess what goes in the blank</p>
+
+<ul>
+<li>(20, 40) -&gt; _______</li>
+</ul>
+
+<p>This is an easy guess, 60. By looking at the 3 examples shown, you learned that the process here is to add the two input numbers. And once you knew that, you simply applied the process to the new input to get your required output. It is important to note that the input (20, 40) never appeared in the examples provided to you. And yet you were able to arrive at the correct answer because you did not remember example inputs and the corresponding sums, you <em>learned the process by which the input was converted to output</em>. This is the crux of &lsquo;how&rsquo; machine learning works.</p>
+
+<p>The example is trivial to us humans, but human brain is a fine piece of machinery. Making machines do this is really difficult. In fact, most of the research that goes into machine learning these days are really about making computers do things that 5 year olds can do easily.</p>
+
+<p>Let&rsquo;s go back to the cell phone price prediction again. Let&rsquo;s say you have a list of phones along with their features. But now you also have a list of corresponding prices as well. So in one column you have the features of the phone and in the other column you have the price of the phone. From these columns if you can figure out the process by which the input features are converted into output prices, you&rsquo;re practically sorted.</p>
+
+<ul>
+<li>Input: Mobile phone features, mobile phone price</li>
+<li>Output: The process that converts features to price</li>
+</ul>
+
+<p>It&rsquo;s okay if that sounds confusing. It is even okay to feel that it is cheating, because if you know the prices of phones why do you need a program to find it for you, right ? But remember our example. The process is not simply remembering each phone and its price, it is learning to convert the features of a phone into a price estimate. This means that it can predict the price of a phone which it has not seen before.</p>
+
+<h2 id="the-what">The &lsquo;What&rsquo;</h2>
+
+<p>Machine algorithms are responsible for figuring out the process that convert inputs to outputs. This is &lsquo;what&rsquo; ML does and there are numerous such algorithms in existence today. But I will not discuss the workings of any of those here. The idea of this article to give an intuitive idea about the essence of machine learning. What we discussed here might be something that you want to keep in the back of your head when reading about actual machine learning algorithms.</p>
+
+<p>Before I wrap up, there is little disclaimer that I wish to add. The analogies that I presented in this article are suited to a particular class of machine learning algorithms called supervised machine learning, where both the inputs and the outputs are available. There is a class of algorithms under unsupervised machine learning. The analogies may seem a bit awkward when you encounter those, but the core idea still remains the same. The process is not explicitly programmed but generated from data. That&rsquo;s a little something to keep in mind.</p>
+
+<h2 id="that-s-all-folks">That&rsquo;s all folks</h2>
+
+<p>I hope this article was worth a read. I have tried my best to distill my interpretation of ML in this article, but again, a writer is never content with his words. There always seems a gap between what you were trying to tell the reader and what you actually wrote. I hope that wasn&rsquo;t too much. If you have any feedback or any questions that arose after reading this post please shoot a mail to me@abhaikollara.xyz.</p>
+
+<p>Goodbye until next time.</p>
+
+</div>
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+  
+
+   <a href="/posts">back</a>
+   &#183;  
+  <a href="https://abhaikollara.github.io/"> home</a> &#183;
+  
+  
+  <a href="/posts"> blog</a> 
+
+  
+   &#183;
+  <a href="/projects"> projects</a>  &#183;
+  <a href="/research"> research</a>  &#183;
+  <a href="/about"> who am I ?</a>  
+</p>
+
+</div>
+
+
+        <div class="section footer"><small>Made with 💜 using Hugo</small>
+</div>
+    </div>
+</body>
+
+</html>

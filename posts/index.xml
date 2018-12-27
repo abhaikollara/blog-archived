@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Raw Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://abhaikollara.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The &#39;Why&#39; of Machine Learning</title>
+      <link>https://abhaikollara.github.io/posts/2018-12-03-the-why-of-machine-learning/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://abhaikollara.github.io/posts/2018-12-03-the-why-of-machine-learning/</guid>
+      <description>It feels good when people appreciate your work. Usually it&amp;rsquo;s as simple as a text with a couple of 👍 or ❤️ or even sharing my previous blog post on their Whatsapp status. Little things like that go a long way in motivating people. So if you&amp;rsquo;re reading this and just remembered someone who deserves your appreciation, go ahead, send them text or shoot them an email. It means a lot.</description>
+    </item>
     
     <item>
       <title>The &#39;Why&#39; of Engineering</title>
